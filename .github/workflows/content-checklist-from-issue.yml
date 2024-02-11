@@ -1,0 +1,19 @@
+# This was based on https://docs.github.com/en/actions/managing-issues-and-pull-requests/commenting-on-an-issue-when-a-label-is-added
+
+name: Add the applicable content development checklist based on a command in the issue body
+on:
+  issues:
+    types:  [opened, edited]
+
+jobs:
+  meetup-issue:
+    if: ${{ contains(github.event.issue.labels.*.name, 'Awaiting Triage') && contains(github.event.issue.labels.*.name, 'meetup-application') }}
+    uses: ./.github/workflows/comment-with-checklist.yml
+    with:
+      content-type: 'meetup'
+      
+  wordcamp-issue:
+    if: ${{ contains(github.event.issue.labels.*.name, 'Awaiting Triage') && contains(github.event.issue.labels.*.name, 'wordcamp-application')  }}
+    uses: ./.github/workflows/comment-with-checklist.yml
+    with:
+      content-type: 'wordcamp'
