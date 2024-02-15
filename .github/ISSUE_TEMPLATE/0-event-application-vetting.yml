@@ -1,0 +1,42 @@
+name: "Event Application Vetting"
+description: Add a WordCamp Application to track.
+title: "[WordCamp]: "
+labels: ["WordCamp", "application", "wordcamp-application", "Awaiting Triage"]
+projects: ["WordPress/64"]
+assignees: [""]
+body:
+  - type: "markdown"
+    attributes:
+      value: "Thanks for taking the time to fill out this Event Application!\n\n([Application Review](https://make.wordpress.org/community/handbook/community-deputy/resources-and-tools/application-review/),  [Most Common Cases](https://make.wordpress.org/community/handbook/community-deputy/resources-and-tools/application-review/#most-common-cases-quick-step-by-step-guide), [Video tutorials](https://make.wordpress.org/community/handbook/community-deputy/resources-and-tools/application-review/#quick-step-by-step-video-tutorial-for-application-review))\n"
+  - type: dropdown
+    id: event-type
+    attributes:
+      label: Event Type
+      description: Please select the applications event type below
+      multiple: false
+      options:
+        - Meetup (default)
+        - WordCamp
+        - WordPress Event
+      default: 0
+    validations:
+      required: true
+  - type: "input"
+    id: event-name
+    attributes:
+      label: "Event Name"
+      description: "Please provide the Event name (Meetup, WordCamp, WordPress Event)"
+      placeholder: "<city>, <country>"
+    validations:
+      required: true
+  - type: "input"
+    id: event-tracker
+    attributes:
+      label: "Event Tracker URL"
+      description: "Please provide the Central [WordCamp Central – WordCamp is a conference that focuses on everything WordPress.](https://central.wordcamp.org/) Event Tracker URL used for this application"
+      placeholder: "https://central.wordcamp.org/"
+    validations:
+      required: true
+  - type: "markdown"
+    attributes:
+      value: "## Next steps\n\n- [ ] Please assign the issue to the team member and make sure to mark the issue ```To Do```\n- [ ] Assignee (Team Member) will mark the issue as ```In Progress``` and perform the vetting taks on the tracker and HS as indicated on the handbook\n- [ ] Once the vetting is completed mark the issue as ```In Review```"

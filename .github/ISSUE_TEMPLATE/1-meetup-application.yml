@@ -24,13 +24,6 @@ body:
       description: Add the Meetup Tracker Link here.
     validations:
       required: true
-  - type: input
-    id: meetup-helpscout
-    attributes:
-      label: Meetup HelpScout Link
-      description: Add the Meetup HelpScout Link here.
-    validations:
-      required: true
   - type: markdown
     attributes:
       value: |
