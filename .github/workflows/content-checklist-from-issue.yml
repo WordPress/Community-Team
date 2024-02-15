@@ -17,3 +17,12 @@ jobs:
     uses: ./.github/workflows/comment-with-checklist.yml
     with:
       content-type: 'wordcamp'
+
+  automate-project-columns:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: alex-page/github-project-automation-plus@v0.8.3
+        with:
+          project: Backlog
+          column: Triage
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
