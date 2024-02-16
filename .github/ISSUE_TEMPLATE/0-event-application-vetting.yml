@@ -15,7 +15,7 @@ body:
       description: Please select the applications event type below
       multiple: false
       options:
-        - Meetup (default)
+        - Meetup
         - WordCamp
         - WordPress Event
       default: 0
