@@ -17,32 +17,32 @@ jobs:
         with:
           script: console.log(context)
       - uses: actions/github-script@v7.0.1
-        if: contains(github.event.issue.labels.*.name, 'Awaiting Triage') && contains(github.event.issue.body, '//content')  
+        if: contains(github.event.issue.labels.*.name, 'event') && contains(github.event.issue.body, 'Meetup')  
         with:
           script: |
             github.rest.issues.addLabels({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              labels: ["[Content] Feedback"]
+              labels: ["Meetup", "meetup-application"]
             })
       - uses: actions/github-script@v7.0.1
-        if: contains(github.event.issue.labels.*.name, 'Awaiting Triage') && contains(github.event.issue.body, '//dev')  
+        if: contains(github.event.issue.labels.*.name, 'event') && contains(github.event.issue.body, 'WordCamp')  
         with:
           script: |
             github.rest.issues.addLabels({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              labels: ["[Type] Bug"]
+              labels: ["WordCamp", "wordcamp-application"]
             })
       - uses: actions/github-script@v7.0.1
-        if: contains(github.event.issue.labels.*.name, 'Awaiting Triage') && contains(github.event.issue.body, '//handbook')  
+        if: contains(github.event.issue.labels.*.name, 'event') && contains(github.event.issue.body, 'WordPress Event')  
         with:
           script: |
             github.rest.issues.addLabels({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              labels: ["[Admin] Handbook"]
+              labels: ["wordpress-event", "wordpress-event-application"]
             })

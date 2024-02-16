@@ -1,9 +1,8 @@
 name: "Event Application Vetting"
-description: Add a WordCamp Application to track.
-title: "[WordCamp]: "
+description: Add a Event Vetting Applications to track.
+title: "[Event]: "
 labels: ["event", "application", "Awaiting Triage"]
-projects: ["WordPress/64"]
-assignees: [""]
+projects: ["WordPress/64", "WordPress/176"]
 body:
   - type: "markdown"
     attributes:
@@ -33,10 +32,7 @@ body:
     id: event_tracker
     attributes:
       label: "Event Tracker URL"
-      description: "Please provide the Central [WordCamp Central – WordCamp is a conference that focuses on everything WordPress.](https://central.wordcamp.org/) Event Tracker URL used for this application"
+      description: "Please provide the [WordCamp Central](https://central.wordcamp.org/) Event Tracker URL used for this application"
       placeholder: "https://central.wordcamp.org/"
     validations:
       required: true
-  - type: "markdown"
-    attributes:
-      value: "## Next steps\n\n- [ ] Please assign the issue to the team member and make sure to mark the issue ```To Do```\n- [ ] Assignee (Team Member) will mark the issue as ```In Progress``` and perform the vetting taks on the tracker and HS as indicated on the handbook\n- [ ] Once the vetting is completed mark the issue as ```In Review```"

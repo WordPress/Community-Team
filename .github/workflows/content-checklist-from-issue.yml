@@ -1,28 +1,25 @@
 # This was based on https://docs.github.com/en/actions/managing-issues-and-pull-requests/commenting-on-an-issue-when-a-label-is-added
 
-name: Add the applicable content development checklist based on a command in the issue body
+name: Add the applicable Event Application Checklist based on a command in the issue body
 on:
   issues:
     types:  [opened, edited]
 
 jobs:
-  meetup-issue:
-    if: ${{ contains(github.event.issue.labels.*.name, 'Awaiting Triage') && contains(github.event.issue.labels.*.name, 'meetup-application') }}
+  meetup-event:
+    if: ${{ contains(github.event.issue.labels.*.name, 'Awaiting Triage') && contains(github.event.issue.body, 'Meetup') }}
     uses: ./.github/workflows/comment-with-checklist.yml
     with:
       content-type: 'meetup'
       
-  wordcamp-issue:
-    if: ${{ contains(github.event.issue.labels.*.name, 'Awaiting Triage') && contains(github.event.issue.labels.*.name, 'wordcamp-application')  }}
+  wordcamp-event:
+    if: ${{ contains(github.event.issue.labels.*.name, 'Awaiting Triage') && contains(github.event.issue.body, 'WordCamp')  }}
     uses: ./.github/workflows/comment-with-checklist.yml
     with:
       content-type: 'wordcamp'
 
-  automate-project-columns:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: alex-page/github-project-automation-plus@v0.8.3
-        with:
-          project: Backlog
-          column: Triage
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+  wordpress-event:
+    if: ${{ contains(github.event.issue.labels.*.name, 'Awaiting Triage') && contains(github.event.issue.body, 'WordPress Event')  }}
+    uses: ./.github/workflows/comment-with-checklist.yml
+    with:
+      content-type: 'wordpress-event'
