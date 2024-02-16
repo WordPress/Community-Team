@@ -1,0 +1,30 @@
+name: New issue notifier
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  notify-coordinators:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/github-script@v6
+      with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: "Heads up @WordPress/docs-issues-coordinators, we have a new issue open. Time to use 'em labels."
+            })
+    - uses: stefanbuck/github-issue-parser@v3
+      id: issue-parser
+      with:
+        template-path: .github/ISSUE_TEMPLATE/0-event-application-vetting.yml # optional but recommended
+
+    - run: cat ${HOME}/issue-parser-result.json
+
+    - run: echo $EVENT_TYPE
+      env:
+        FAVORITE_DISH: ${{ steps.issue-parser.outputs.issueparser_event_type }}

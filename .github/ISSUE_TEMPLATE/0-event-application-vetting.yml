@@ -1,7 +1,7 @@
 name: "Event Application Vetting"
 description: Add a WordCamp Application to track.
 title: "[WordCamp]: "
-labels: ["WordCamp", "application", "wordcamp-application", "Awaiting Triage"]
+labels: ["event", "application", "Awaiting Triage"]
 projects: ["WordPress/64"]
 assignees: [""]
 body:
@@ -9,7 +9,7 @@ body:
     attributes:
       value: "Thanks for taking the time to fill out this Event Application!\n\n([Application Review](https://make.wordpress.org/community/handbook/community-deputy/resources-and-tools/application-review/),  [Most Common Cases](https://make.wordpress.org/community/handbook/community-deputy/resources-and-tools/application-review/#most-common-cases-quick-step-by-step-guide), [Video tutorials](https://make.wordpress.org/community/handbook/community-deputy/resources-and-tools/application-review/#quick-step-by-step-video-tutorial-for-application-review))\n"
   - type: dropdown
-    id: event-type
+    id: event_type
     attributes:
       label: Event Type
       description: Please select the applications event type below
@@ -22,7 +22,7 @@ body:
     validations:
       required: true
   - type: "input"
-    id: event-name
+    id: event_name
     attributes:
       label: "Event Name"
       description: "Please provide the Event name (Meetup, WordCamp, WordPress Event)"
@@ -30,7 +30,7 @@ body:
     validations:
       required: true
   - type: "input"
-    id: event-tracker
+    id: event_tracker
     attributes:
       label: "Event Tracker URL"
       description: "Please provide the Central [WordCamp Central – WordCamp is a conference that focuses on everything WordPress.](https://central.wordcamp.org/) Event Tracker URL used for this application"

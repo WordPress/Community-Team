@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Make WordPress.org Community Blog
+    url: https://make.wordpress.org/community/
+    about: Read the latest meeting notes and updates from the team.
+  - name: Make WordPress.org Community Slack
+    url: https://wordpress.slack.com/archives/C037W5S7X
+    about: Meet and converse with members of the WordPress Community Team.
