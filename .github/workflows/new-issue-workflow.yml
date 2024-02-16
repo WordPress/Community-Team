@@ -16,7 +16,7 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: "Heads up @WordPress/docs-issues-coordinators, we have a new issue open. Time to use 'em labels."
+              body: "Heads up @@WordPress/community-triage, we have a new issue open. Time to use 'em labels."
             })
     - uses: stefanbuck/github-issue-parser@v3
       id: issue-parser
@@ -27,4 +27,4 @@ jobs:
 
     - run: echo $EVENT_TYPE
       env:
-        FAVORITE_DISH: ${{ steps.issue-parser.outputs.issueparser_event_type }}
+        EVENT_TYPE: ${{ steps.issue-parser.outputs.issueparser_event_type }}
