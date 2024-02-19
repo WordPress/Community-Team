@@ -1,0 +1,48 @@
+name: Advanced Issue labeler
+on:
+  issues:
+    types: [ opened ]
+
+permissions:
+  contents: read
+
+jobs:
+  label-component:
+    runs-on: ubuntu-latest
+
+    permissions:
+      # required for all workflows
+      issues: write
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Parse issue form
+        uses: stefanbuck/github-issue-parser@v3
+        id: issue-parser
+        with:
+          template-path: .github/ISSUE_TEMPLATE/0-event-application-vetting.yml
+
+      - name: Set labels based on Event Type field
+        uses: redhat-plumbers-in-action/advanced-issue-labeler@v2
+        with:
+          issue-form: ${{ steps.issue-parser.outputs.jsonString }}
+          section: event_type
+          block-list: |
+            None
+            Other
+          token: ${{ secrets.GITHUB_TOKEN }}
+        
+   - name: Update issue
+            uses: actions-cool/issues-helper@v3
+            with:
+                actions: 'update-issue'
+                token: ${{ secrets.GITHUB_TOKEN }}
+                issue-number: ${{ github.event.issue.number }}
+                state: 'open'
+                title: 'xxx'
+                body: 'xxxx'
+                update-mode: 'replace'
+                labels: 'xx'
+                assignees: 'xxx'
+                emoji: '+1'

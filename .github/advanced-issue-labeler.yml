@@ -1,0 +1,12 @@
+policy:
+  - template: ["0-event-application-vetting.yml"]
+    section:
+      - id: ["event_type"]
+        block-list: []
+        label:
+          - name: "meetup-application"
+            keys: ["Meetup"]
+          - name: "wordcamp-application"
+            keys: ["WordCamp"]
+          - name: "wordpress-event-application"
+            keys: ["WordPress Event"]
