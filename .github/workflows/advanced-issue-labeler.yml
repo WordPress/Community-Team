@@ -22,16 +22,6 @@ jobs:
         id: issue-parser
         with:
           template-path: .github/ISSUE_TEMPLATE/0-event-application-vetting.yml
-        env:
-          EVENTJSON: ${{ steps.issue-parser.outputs.jsonString }}
-          EVENTTYPE: ${{ steps.issue-parser.outputs.issue_parser.eventtype }}
-          EVENTNAME: ${{ steps.issue-parser.outputs.issue_parser.eventname }}
-
-      - name: Log Issue Value
-        run: |
-          echo "Issue Title: ${{ process.env.EVENTJSON }}"
-          echo "Issue Body: ${{ github.event.issue.body }}"
-          echo "Label: ${{ github.event.label.name }}"
 
       - name: Set labels based on Event Type field
         uses: redhat-plumbers-in-action/advanced-issue-labeler@v2
@@ -46,13 +36,12 @@ jobs:
       - name: Echo issue form as JSON String
         run: echo ${{ steps.issue-parser.outputs.jsonString }}
 
-      - name: Update issue title
+      - name: Update Event issue title
         uses: actions-cool/issues-helper@v3
         with:
           actions: "update-issue"
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.issue.number }}
           state: "open"
-          title: "[Event] ${{ github.event.issue.number }}"
+          title: "[Event] ${{ steps.issue-parser.outputs.eventtype }} ${{ github.event.issue.number }}"
           update-mode: "replace"
-          emoji: "+1"

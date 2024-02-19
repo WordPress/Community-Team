@@ -1,7 +1,7 @@
 policy:
   - template: ["0-event-application-vetting.yml"]
     section:
-      - id: ["event_type"]
+      - id: ["eventtype"]
         block-list: []
         label:
           - name: "meetup-application"
