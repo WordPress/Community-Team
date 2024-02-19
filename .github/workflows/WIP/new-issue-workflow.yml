@@ -5,12 +5,12 @@ on:
     types: [opened]
 
 jobs:
-  notify-coordinators:
+  notify-triage-team:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/github-script@v6
-      with:
+      - uses: actions/github-script@v7
+        with:
           script: |
             github.rest.issues.createComment({
               issue_number: context.issue.number,
@@ -20,11 +20,11 @@ jobs:
             })
   get-event-issue:
     runs-on: ubuntu-latest
-    if: ${{ contains(github.event.issue.title , '[Meetup]')}}
+    if: ${{ contains(github.event.issue.title , '[Event]')}}
     timeout-minutes: 30
     steps:
       - name: Add Comment
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             github.rest.issues.createComment({
@@ -33,9 +33,13 @@ jobs:
               repo: context.repo.repo,
               body: 'Workflow running on: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}',
             });
-        
-      - uses: actions/github-script@v6
-        name: Add label
+        run: |
+          echo "Issue Title: ${{ github.event.issue.title }}"
+          echo "Issue Body: ${{ github.event.issue.body }}"
+          echo "Label: ${{ github.event.label.name }}"
+
+      - name: Add label
+        uses: actions/github-script@v7
         with:
           script: |
             github.rest.issues.addLabels({
@@ -44,3 +48,17 @@ jobs:
               repo: context.repo.repo,
               labels: ["environment/${{steps.inputs.outputs.dropdown_label}}"]
             });
+      - name: Update Issue Title
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.update ({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: 'New Title'
+            });
+        run: |
+          echo "Issue Title: ${{ github.event.issue.title }}"
+          echo "Issue Body: ${{ github.event.issue.body }}"
+          echo "Label: ${{ github.event.label.name }}"

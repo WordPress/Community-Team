@@ -1,0 +1,20 @@
+name: Log Issue Value
+
+on:
+  issues:
+    types:
+      - labeled
+
+jobs:
+  log-issue-value:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Log Issue Value
+        run: |
+          echo "Issue Title: ${{ github.event.issue.title }}"
+          echo "Issue Body: ${{ github.event.issue.body }}"
+          echo "Label: ${{ github.event.label.name }}"
