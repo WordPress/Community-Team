@@ -22,12 +22,22 @@ jobs:
         id: issue-parser
         with:
           template-path: .github/ISSUE_TEMPLATE/0-event-application-vetting.yml
+        env:
+          EVENTJSON: ${{ steps.issue-parser.outputs.jsonString }}
+          EVENTTYPE: ${{ steps.issue-parser.outputs.issue_parser.eventtype }}
+          EVENTNAME: ${{ steps.issue-parser.outputs.issue_parser.eventname }}
+
+      - name: Log Issue Value
+        run: |
+          echo "Issue Title: ${{ process.env.EVENTJSON }}"
+          echo "Issue Body: ${{ github.event.issue.body }}"
+          echo "Label: ${{ github.event.label.name }}"
 
       - name: Set labels based on Event Type field
         uses: redhat-plumbers-in-action/advanced-issue-labeler@v2
         with:
           issue-form: ${{ steps.issue-parser.outputs.jsonString }}
-          section: event_type
+          section: eventtype
           block-list: |
             None
             Other

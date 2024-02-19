@@ -8,7 +8,7 @@ body:
     attributes:
       value: "Thanks for taking the time to fill out this Event Application!\n\n([Application Review](https://make.wordpress.org/community/handbook/community-deputy/resources-and-tools/application-review/),  [Most Common Cases](https://make.wordpress.org/community/handbook/community-deputy/resources-and-tools/application-review/#most-common-cases-quick-step-by-step-guide), [Video tutorials](https://make.wordpress.org/community/handbook/community-deputy/resources-and-tools/application-review/#quick-step-by-step-video-tutorial-for-application-review))\n"
   - type: dropdown
-    id: event_type
+    id: eventtype
     attributes:
       label: Event Type
       description: Please select the applications event type below
@@ -21,7 +21,7 @@ body:
     validations:
       required: true
   - type: "input"
-    id: event_name
+    id: eventname
     attributes:
       label: "Event Name"
       description: "Please provide the Event name (Meetup, WordCamp, WordPress Event)"
@@ -29,7 +29,7 @@ body:
     validations:
       required: true
   - type: "input"
-    id: event_tracker
+    id: eventtracker
     attributes:
       label: "Event Tracker URL"
       description: "Please provide the [WordCamp Central](https://central.wordcamp.org/) Event Tracker URL used for this application"
