@@ -1,0 +1,11 @@
+policy:
+  - section:
+      - id: [eventtype]
+        block-list: ["None", "Other"]
+        label:
+          - name: "meetup-application"
+            keys: ["Meetup"]
+          - name: "wordcamp-application"
+            keys: ["WordCamp"]
+          - name: "wordpress-event-application"
+            keys: ["WordPress Event"]

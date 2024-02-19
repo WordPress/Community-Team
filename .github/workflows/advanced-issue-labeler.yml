@@ -28,6 +28,7 @@ jobs:
         with:
           issue-form: ${{ steps.issue-parser.outputs.jsonString }}
           section: eventtype
+          config-path: .github/label-policy.yml
           block-list: |
             None
             Other
