@@ -2,7 +2,7 @@ name: "Event Application Vetting"
 description: Add a Event Vetting Applications to track.
 title: "[Event]: "
 labels: ["event", "application", "Awaiting Triage"]
-projects: ["WordPress/64", "WordPress/176"]
+projects: ["WordPress/176"]
 body:
   - type: "markdown"
     attributes:
