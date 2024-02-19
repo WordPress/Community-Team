@@ -33,9 +33,6 @@ jobs:
             Other
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Echo issue form as JSON String
-        run: echo ${{ steps.issue-parser.outputs.jsonString }}
-
       - name: Update Event issue title
         uses: actions-cool/issues-helper@v3
         with:
