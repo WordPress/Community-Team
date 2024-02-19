@@ -1,0 +1,48 @@
+# BASED ON https://github.com/WordPress/Documentation-Issue-Tracker/blob/main/.github/workflows/actions-when-commented.yml
+
+name: Label application-type issues when opened
+on: 
+  issues:
+    types: [opened, edited]
+
+jobs:
+
+  label_issues:
+    if: ${{ !github.event.issue.pull_request }}
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/github-script@v7.0.1
+        with:
+          script: console.log(context)
+      - uses: actions/github-script@v7.0.1
+        if: contains(github.event.issue.labels.*.name, 'event') && contains(github.event.issue.body, 'Meetup')  
+        with:
+          script: |
+            github.rest.issues.addLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ["Meetup", "meetup-application"]
+            })
+      - uses: actions/github-script@v7.0.1
+        if: contains(github.event.issue.labels.*.name, 'event') && contains(github.event.issue.body, 'WordCamp')  
+        with:
+          script: |
+            github.rest.issues.addLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ["WordCamp", "wordcamp-application"]
+            })
+      - uses: actions/github-script@v7.0.1
+        if: contains(github.event.issue.labels.*.name, 'event') && contains(github.event.issue.body, 'WordPress Event')  
+        with:
+          script: |
+            github.rest.issues.addLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ["wordpress-event", "wordpress-event-application"]
+            })

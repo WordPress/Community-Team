@@ -18,19 +18,7 @@ jobs:
               repo: context.repo.repo,
               body: "Heads up @@WordPress/community-triage, we have a new issue open. Time to triage."
             })
-    - uses: stefanbuck/github-issue-parser@v3
-      id: issue-parser
-      with:
-        template-path: .github/ISSUE_TEMPLATE/0-event-application-vetting.yml # optional but recommended
-
-    - run: cat ${HOME}/issue-parser-result.json
-
-    - run: echo $EVENT_TYPE
-      env:
-        EVENT_TYPE: ${{ steps.issue-parser.outputs.issueparser_event_type }}
-        EVENT_NAME: ${{ steps.issue-parser.outputs.issueparser_event_name }}
-  
-  new-issue-values:
+  get-event-issue:
     runs-on: ubuntu-latest
     if: ${{ contains(github.event.issue.title , '[Meetup]')}}
     timeout-minutes: 30
@@ -46,66 +34,6 @@ jobs:
               body: 'Workflow running on: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}',
             });
         
-      - name: Get inputs
-        id: inputs
-        shell: bash
-        run: |
-          add_output(){
-            local k=$1
-            local v=$2
-            echo "$k=$v" >> $GITHUB_OUTPUT
-            echo "✅ Output generated with key: $k, value: $v"
-          }
-
-          process_key(){
-              local process_key=$1
-              # Trim leading and trailing whitespace
-              process_key="$(echo -e "${process_key}" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
-
-              # Substitute spaces with underscores
-              process_key="${process_key// /_}"
-
-              # Convert to lowercase
-              process_key="${process_key,,}"
-
-              echo "$process_key";
-          }
-
-          process_checkbox_line(){
-              local checkbox_line=$1
-              option=$(echo "$checkbox_line" | sed 's/- \[[^]]*\] //')
-              
-              key="$(process_key "$option")"
-              value=$(echo "$checkbox_line" | grep -qE -- '- \[X\]' && echo "true" || echo "false")
-
-              add_output "$key" "$value"
-
-              escaped_lookfor=$(echo "$checkbox_line" | sed 's/[][()\.^$?*+{}|]/\\&/g')
-              nextcheckbox=$(echo "${{ github.event.issue.body }}" | awk "/$escaped_lookfor$/{getline; print}")
-
-              if [[ "$nextcheckbox" == "- ["* && -n "$nextcheckbox" && "$nextcheckbox" != "$checkbox_line" ]]; then
-                  process_checkbox_line "$nextcheckbox"
-              fi
-          }
-
-          echo "${{ github.event.issue.body }}" | awk '/^###/ { print }' | while read line; do
-              echo "🔍 Processing line: $line"
-              value=$(echo "${{ github.event.issue.body }}" | awk "/^$line$/{getline;getline; print}")
-
-              if [[ "$value" == "- ["* ]]; then
-                  # Processing a checkbox
-                  echo "☑️ Detected a checkbox!"
-                  process_checkbox_line "$value"
-              else
-                  # Remove "###" from the beginning of the string
-                  key=${line##"###"}
-                  
-                  key="$(process_key "$key")"
-                  add_output "$key" "$value"
-              fi
-          done
-
-
       - uses: actions/github-script@v6
         name: Add label
         with:
@@ -116,41 +44,3 @@ jobs:
               repo: context.repo.repo,
               labels: ["environment/${{steps.inputs.outputs.dropdown_label}}"]
             });
-
-    outputs:
-      input: ${{ steps.inputs.outputs.input_label }}
-      dropdown: ${{ steps.inputs.outputs.dropdown_label }}
-      dropdown_multiple: ${{ steps.inputs.outputs.dropdown_multiple_label }}
-      textarea: ${{ steps.inputs.outputs.textarea_label }}
-      checkbox1: ${{ steps.inputs.outputs.checkbox_label_1 }}
-      checkbox2: ${{ steps.inputs.outputs.checkbox_label_2 }}
-
-  process:
-    name: Process ${{needs.issue.outputs.dropdown}}
-    runs-on: ubuntu-latest
-    needs: new-issue-values
-    steps:
-      - name: Add Comment
-        uses: actions/github-script@v6
-        with:
-          script: |
-            const body = `### Processed outputs:
-
-              **input_label**: ${{ needs.issue.outputs.input }}
-              **dropdown_label**: ${{ needs.issue.outputs.dropdown }}
-              **dropdown_multiple_label**: ${{ needs.issue.outputs.dropdown_multiple }}
-              **textarea_label**: ${{ needs.issue.outputs.textarea }}
-              **checkbox_label_1**: ${{ needs.issue.outputs.checkbox1 }}
-              **checkbox_label_2**: ${{ needs.issue.outputs.checkbox2 }}
-            `;
-
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: body
-            });
-
-    
-    
-    
