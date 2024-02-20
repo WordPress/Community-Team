@@ -1,4 +1,4 @@
-name: Advanced Issue labeler
+name: Issue labeler
 on:
   issues:
     types: [opened]
@@ -22,6 +22,11 @@ jobs:
         id: issue-parser
         with:
           template-path: .github/ISSUE_TEMPLATE/0-event-application-vetting.yml
+      - run: cat ${HOME}/issue-parser-result.json
+      - run: echo $EVENTTYPE $EVENTNAME
+        env:
+          EVENTTYPE: ${{ steps.issue-parser.outputs.issueparser_eventtype }}
+          EVENTNAME: ${{ steps.issue-parser.outputs.issueparser_eventname }}
 
       - name: Set labels based on Event Type field
         uses: redhat-plumbers-in-action/advanced-issue-labeler@v3.0.0
@@ -41,5 +46,5 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.issue.number }}
           state: "open"
-          title: "[Event] ${{ steps.issue-parser.outputs.eventtype }} ${{ github.event.issue.number }}"
+          title: "[Event] ${{ steps.issue-parser.outputs.issueparser_eventtype }} ${{ github.event.issue.number }}"
           update-mode: "replace"

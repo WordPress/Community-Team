@@ -6,7 +6,8 @@ projects: ["WordPress/176"]
 body:
   - type: "markdown"
     attributes:
-      value: "Thanks for taking the time to fill out this Event Application!\n\n([Application Review](https://make.wordpress.org/community/handbook/community-deputy/resources-and-tools/application-review/),  [Most Common Cases](https://make.wordpress.org/community/handbook/community-deputy/resources-and-tools/application-review/#most-common-cases-quick-step-by-step-guide), [Video tutorials](https://make.wordpress.org/community/handbook/community-deputy/resources-and-tools/application-review/#quick-step-by-step-video-tutorial-for-application-review))\n"
+      value: | 
+      "Thanks for taking the time to fill out this Event Application!\n\n([Application Review](https://make.wordpress.org/community/handbook/community-deputy/resources-and-tools/application-review/),  [Most Common Cases](https://make.wordpress.org/community/handbook/community-deputy/resources-and-tools/application-review/#most-common-cases-quick-step-by-step-guide), [Video tutorials](https://make.wordpress.org/community/handbook/community-deputy/resources-and-tools/application-review/#quick-step-by-step-video-tutorial-for-application-review))\n"
   - type: dropdown
     id: eventtype
     attributes:
