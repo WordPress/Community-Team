@@ -4,9 +4,11 @@ title: "[Event]: "
 labels: ["event", "application", "Awaiting Triage"]
 projects: ["WordPress/176"]
 body:
-  - type: "markdown"
+  - type: markdown
     attributes:
-      value: "Thanks for taking the time to fill out this Event Application!\n\n([Application Review](https://make.wordpress.org/community/handbook/community-deputy/resources-and-tools/application-review/),  [Most Common Cases](https://make.wordpress.org/community/handbook/community-deputy/resources-and-tools/application-review/#most-common-cases-quick-step-by-step-guide), [Video tutorials](https://make.wordpress.org/community/handbook/community-deputy/resources-and-tools/application-review/#quick-step-by-step-video-tutorial-for-application-review))\n"
+      value: |
+        Thanks for taking the time to fill out this Event Application!
+        ([Application Review](https://make.wordpress.org/community/handbook/community-deputy/resources-and-tools/application-review/),  [Most Common Cases](https://make.wordpress.org/community/handbook/community-deputy/resources-and-tools/application-review/#most-common-cases-quick-step-by-step-guide), [Video tutorials](https://make.wordpress.org/community/handbook/community-deputy/resources-and-tools/application-review/#quick-step-by-step-video-tutorial-for-application-review)
   - type: dropdown
     id: eventtype
     attributes:
@@ -36,3 +38,17 @@ body:
       placeholder: "https://central.wordcamp.org/"
     validations:
       required: true
+  - type: markdown
+    attributes:
+      value: |
+        ## Next steps
+
+        - [ ] Please assign the issue to the team member and make sure to mark the issue ```To Do```
+        - [ ] Assignee (Team Member) will mark the issue as ```In Progress``` and perform the vetting taks on the tracker and HS as indicated on the handbook
+        - [ ] Once the vetting is completed mark the issue as ```In Review```
+
+        ## Public vs Private
+
+        - Use comments for questions about the process and changes or to indicate delays, holding situation.
+        - Avoid discussing the community or the organiser in comments on Github. Even if there are doubts about some applications.
+        - We do not post vetting notes publicly and ensure such notes are strictly in the tracker or HelpScout.
