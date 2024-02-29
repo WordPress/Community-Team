@@ -19,7 +19,7 @@ body:
         - Meetup
         - WordCamp
         - WordPress Event
-      default: 0
+      default: 1
     validations:
       required: true
   - type: "input"

@@ -1,0 +1,25 @@
+# This was based on https://docs.github.com/en/actions/managing-issues-and-pull-requests/commenting-on-an-issue-when-a-label-is-added
+
+name: Add the applicable Event Application Checklist based on a command in the issue body
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  meetup-event:
+    if: ${{ contains(github.event.issue.labels.*.name, 'Awaiting Triage') && contains(github.event.issue.labels.*.name, 'event') && contains(github.event.issue.body, 'Meetup') }}
+    uses: ./.github/workflows/comment-with-checklist.yml
+    with:
+      content-type: "meetup"
+
+  wordcamp-event:
+    if: ${{ contains(github.event.issue.labels.*.name, 'Awaiting Triage') && contains(github.event.issue.labels.*.name, 'event') && contains(github.event.issue.body, 'WordCamp')  }}
+    uses: ./.github/workflows/comment-with-checklist.yml
+    with:
+      content-type: "wordcamp"
+
+  wordpress-event:
+    if: ${{ contains(github.event.issue.labels.*.name, 'Awaiting Triage') && contains(github.event.issue.labels.*.name, 'event') && contains(github.event.issue.body, 'WordPress Event')  }}
+    uses: ./.github/workflows/comment-with-checklist.yml
+    with:
+      content-type: "wordpress-event"
