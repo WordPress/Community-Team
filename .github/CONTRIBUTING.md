@@ -2,6 +2,11 @@
 
 Start at [GitHub - WordPress/Community-Team](https://github.com/WordPress/Community-Team)
 
+## Bookmarklet
+
+Install the bookmarklet here:
+
+https://wordpress.github.io/Community-Team/
 
 ## Create new Event Tracking issue
 
