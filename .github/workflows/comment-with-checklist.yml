@@ -23,9 +23,9 @@ jobs:
 
             ## Next steps
 
-            - [ ] Please assign the issue to the team member and make sure to mark the issue ```To Do```
-            - [ ] Assignee (Team Member) will mark the issue as ```In Progress``` and perform the vetting taks on the tracker and HS as indicated on the handbook
-            - [ ] Once the vetting is completed mark the issue as ```In Review```
+            - [ ] Please assign the issue to the team member and make sure to mark the issue ```👋  Todo / Ready```
+            - [ ] Assignee (Team Member) will mark the issue as ```🚧  In Progress``` and perform the vetting taks on the tracker and HS as indicated on the handbook
+            - [ ] Once the vetting is completed mark the issue as ```✅ Complete```
 
             ## Public vs Private
 
