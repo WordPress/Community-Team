@@ -1,7 +1,7 @@
 # This is a reusable workflow, called from other workflows
 # See https://docs.github.com/en/actions/using-workflows/reusing-workflows
 
-name: Comments on issues 
+name: Comments on issues
 on:
   workflow_call:
     inputs:
@@ -15,7 +15,7 @@ jobs:
       issues: write
     steps:
       - uses: peter-evans/create-or-update-comment@v3
-        if: contains(inputs.content-type, 'meetup')  || contains(inputs.content-type, 'wordcamp') || contains(inputs.content-type, 'wordpress-event')
+        if: contains(inputs.content-type, 'event-application')
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
