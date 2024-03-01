@@ -19,7 +19,8 @@ jobs:
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
-            ## Next steps
+          Thank you for creating this issue. @{{ issue.user.login }}  
+          ## Next steps
 
               - [ ] Please assign the issue to the team member and make sure to mark the issue ```To Do```
               - [ ] Assignee (Team Member) will mark the issue as ```In Progress``` and perform the vetting taks on the tracker and HS as indicated on the handbook

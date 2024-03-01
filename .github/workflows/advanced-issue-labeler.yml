@@ -50,5 +50,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: "Heads up @WordPress/community-triage, we have a new issue open. Time to triage."
+              body: "Heads up @WordPress/community-triage, we have a new issue openned by @{{ issue.user.login }}. Time to triage."
             })
