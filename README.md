@@ -10,6 +10,9 @@ This is the home of the Make Community team for the WordPress open source projec
 
 Here is where we have policy debates, project announcements, and assist community members in organizing events.
 
+### Event Issue Bookmarklet
+https://wordpress.github.io/Community-Team/
+
 Everyone is welcome to comment on posts and participate in the discussions regardless of skill level or experience.
 
 ## **Get Involved**
