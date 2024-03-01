@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Event Issue Bookmarklet</title>
+</head>
+
+<body class="flex items-center justify-center h-screen bg-gray-100">
+    <div class="text-center">
+        <h1 class="text-4xl font-bold mb-4">Github Event Issue Creator | Bookmarklet</h1>
+
+        <a href="javascript:(function()%7B(()%20%3D%3E%20%7B%0A%20%20%20%20const%20eventTitle%20%3D%20document.querySelector('input%5Bname%3D%22post_title%22%5D')%3F.value%20%7C%7C%20'N%2FA'%3B%0A%20%20%20%20const%20eventStatus%20%3D%20document.querySelector('select%5Bname%3D%22post_status%22%5D')%3F.value%20%7C%7C%20'N%2FA'%3B%0A%20%20%20%20const%20eventTypeValue%20%3D%20document.querySelector('input%5Bname%3D%22post_type%22%5D')%3F.value%20%7C%7C%20'N%2FA'%3B%0A%20%20%20%20%2F%2F%20Extract%20the%20tab%20title%2C%20handling%20both%20straight%20and%20curly%20quotation%20marks%0A%20%20%20%20const%20tabTitleMatch%20%3D%20document.title.match(%2F%22(%5B%5E%22%5D%2B)%22%7C%E2%80%9C(%5B%5E%E2%80%9D%5D%2B)%E2%80%9D%2F)%3B%0A%20%20%20%20const%20tabTitle%20%3D%20tabTitleMatch%20%3F%20tabTitleMatch%5B1%5D%20%7C%7C%20tabTitleMatch%5B2%5D%20%3A%20eventTitle%3B%0A%20%20%20%20const%20eventTrackerLink%20%3D%20window.location.href%20%7C%7C%20'N%2FA'%3B%0A%0A%20%20%20%20let%20eventType%3B%0A%20%20%20%20let%20eventLabels%20%3D%20'event%2C%20application%2C%20Awaiting%20Triage'%3B%0A%20%20%20%20switch%20(eventTypeValue)%20%7B%0A%20%20%20%20%20%20%20%20case%20'wp_meetup'%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20eventType%20%3D%20'Meetup'%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20eventLabels%20%2B%3D%20'%2C%20Meetup%2C%20meetup-application'%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20break%3B%0A%20%20%20%20%20%20%20%20case%20'wordcamp'%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20eventType%20%3D%20'WordCamp'%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20eventLabels%20%2B%3D%20'%2C%20WordCamp%2C%20wordcamp-application'%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20break%3B%0A%20%20%20%20%20%20%20%20default%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20eventType%20%3D%20'WordPress%20Event'%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20eventLabels%20%2B%3D%20'%2C%20WordPress-event%2C%20wordpress-event-application'%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20const%20issueTitle%20%3D%20encodeURIComponent(%60%5B%24%7BeventType%7D%5D%20%24%7BeventTitle%7D%60)%3B%0A%20%20%20%20const%20issueLabels%20%3D%20encodeURIComponent(eventLabels)%3B%0A%20%20%20%20const%20issueProject%20%3D%20encodeURIComponent(%60WordPress%2F176%60)%3B%0A%20%20%20%20const%20issueTrackerLink%20%3D%20encodeURIComponent(window.location.href)%3B%0A%0A%20%20%20%20const%20issueBody%20%3D%20encodeURIComponent(%0A%20%20%20%20%20%20%20%20%60%23%23%23%20Event%20Name%3A%5Cn%20%24%7BeventTitle%7D%5Cn%23%23%23%20Event%20Type%3A%5Cn%20%24%7BeventType%7D%5Cn%20%20%23%23%23%20Tracker%20URL%3A%5Cn%20%24%7BeventTrackerLink%7D%5Cn%5CnFound%20%24%7BeventType%7D%20application%20for%20%22%24%7BtabTitle%7D%22.%60%0A%20%20%20%20)%3B%0A%0A%20%20%20%20const%20githubUrl%20%3D%20%60https%3A%2F%2Fgithub.com%2FWordPress%2FCommunity-Team%2Fissues%2Fnew%3Ftitle%3D%24%7BissueTitle%7D%26body%3D%24%7BissueBody%7D%26labels%3D%24%7BissueLabels%7D%26projects%3D%24%7BissueProject%7D%60%3B%0A%0A%20%20%20%20window.open(githubUrl)%0A%0A%7D)()%3B%7D)()%3B"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            ✚ Event Issue
+        </a>
+        <p class="mt-4 text-gray-600">Drag the button to your bookmarks bar to install</p>
+
+        <div class="flex justify-center space-x-4 mt-8">
+            <div class="max-w-sm rounded overflow-hidden shadow-lg p-4 bg-white">
+                <img class="w-full" src="./images/bmklt-demo1.gif" alt="First Image">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">Drag the bookmarklet button to install</div>
+                </div>
+            </div>
+            <div class="max-w-sm rounded overflow-hidden shadow-lg p-4 bg-white">
+                <img class="w-full" src="./images/bmklt-demo2.gif" alt="Second Image">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">Click to use on any Central Tracker Edit Page</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
