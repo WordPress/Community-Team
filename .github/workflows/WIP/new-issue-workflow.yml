@@ -1,9 +1,0 @@
-name: New issue notifier
-
-on:
-  issues:
-    types: [opened]
-
-jobs:
-  notify-triage-team:
-    runs-on: ubuntu-latest
