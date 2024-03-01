@@ -4,6 +4,10 @@
 
 This is the home of the Make Community team for the WordPress open source project!
 
+→ [WP Community Team on GitHub](https://github.com/orgs/WordPress/teams/make-community-team/)) | @WordPress/make-community-team
+- [Create a New Issue/Idea/Discussion](https://github.com/WordPress/Community-Team/issues/new/choose)
+- [View Ongoing Project Boards](https://github.com/WordPress/Community-Team/projects)
+
 Here is where we have policy debates, project announcements, and assist community members in organizing events.
 
 Everyone is welcome to comment on posts and participate in the discussions regardless of skill level or experience.
