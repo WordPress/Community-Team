@@ -16,6 +16,8 @@ Here is where we have policy debates, project announcements, and assist communit
 
 🔖 https://wordpress.github.io/Community-Team/
 
+![](_pages/images/event-bookmarklet.gif)
+
 Everyone is welcome to comment on posts and participate in the discussions regardless of skill level or experience.
 
 ## **Get Involved**
