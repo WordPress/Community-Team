@@ -8,10 +8,13 @@ This is the home of the Make Community team for the WordPress open source projec
 - [Create a New Issue/Idea/Discussion](https://github.com/WordPress/Community-Team/issues/new/choose)
 - [View Ongoing Project Boards](https://github.com/WordPress/Community-Team/projects)
 
+* Contributing [Guide](https://github.com/WordPress/Community-Team/blob/trunk/.github/CONTRIBUTING.md)
+
 Here is where we have policy debates, project announcements, and assist community members in organizing events.
 
 ### Event Issue Bookmarklet
-https://wordpress.github.io/Community-Team/
+
+🔖 https://wordpress.github.io/Community-Team/
 
 Everyone is welcome to comment on posts and participate in the discussions regardless of skill level or experience.
 
