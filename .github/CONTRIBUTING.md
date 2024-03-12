@@ -2,11 +2,23 @@
 
 Start at [GitHub - WordPress/Community-Team](https://github.com/WordPress/Community-Team)
 
-## Bookmarklet
+## Event Issue Creator - Bookmarklet
 
 Install the bookmarklet here:
 
 https://wordpress.github.io/Community-Team/
+
+**Installation:**
+ 
+> Drag the issue creator button to your bookmarks bar to install.
+
+**Usage**
+
+1. Open the event tracker to a specific event needing vetting.
+2. Click on the issue creator button link in your bookmarks bar and confirm.
+3. A new tab open with the new issue already on GitHub and the right name and labels already added, you just have to leave it unassigned or assign it to yourself if you are going to vet it, and then you click on the green button (Submit new issue) at the bottom.
+
+![Github Event Issue Creator | Bookmarklet](https://github.com/WordPress/Community-Team/assets/4948323/80b23761-e724-459a-be3e-9e781237206d)
 
 ## Create new Event Tracking issue
 
