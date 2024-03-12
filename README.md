@@ -16,6 +16,16 @@ Here is where we have policy debates, project announcements, and assist communit
 
 🔖 https://wordpress.github.io/Community-Team/
 
+**Installation:**
+ 
+> Drag the issue creator button to your bookmarks bar to install.
+
+**Usage**
+
+1. Open the event tracker to a specific event needing vetting.
+2. Click on the issue creator button link in your bookmarks bar and confirm.
+3. A new tab open with the new issue already on GitHub and the right name and labels already added, you just have to leave it unassigned or assign it to yourself if you are going to vet it, and then you click on the green button (Submit new issue) at the bottom.
+
 ![](_pages/images/event-bookmarklet.gif)
 
 Everyone is welcome to comment on posts and participate in the discussions regardless of skill level or experience.
