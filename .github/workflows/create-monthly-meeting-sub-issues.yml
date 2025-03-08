@@ -1,0 +1,38 @@
+name: Create Sub-Issues for Monthly Meeting
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  create-sub-issues:
+    if: contains(github.event.issue.labels.*.name, 'Community Monthly Meeting')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create sub-issues
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # 親Issueの情報を取得
+          PARENT_ISSUE_NUMBER=${{ github.event.issue.number }}
+          PARENT_ISSUE_TITLE=${{ github.event.issue.title }}
+          PARENT_ISSUE_URL=${{ github.event.issue.html_url }}
+
+          # 子Issueのリスト
+          TASKS=(
+            "Create and publish the team meeting agenda|**Agenda template**\n[Google Docs](https://docs.google.com/document/d/1TL4z0Z6L83jBbXhBIWPJ7b2FHYLyijXewXZ_BYMl33Q/edit?tab=t.0)\n\n**Creating a new post**\n[WordPress Community Post](https://make.wordpress.org/community/wp-admin/post-new.php)\n\n**Parent Issue:** [#$PARENT_ISSUE_NUMBER]($PARENT_ISSUE_URL)"
+            "Create the meeting script|**Script template**\n[Google Docs](https://docs.google.com/document/d/1zu_lWf150SJ6nVz7IG7_QhLYQbvOUQNBgQ_PU2c2q8A/edit?tab=t.0)\n\n**Parent Issue:** [#$PARENT_ISSUE_NUMBER]($PARENT_ISSUE_URL)"
+            "Host the meeting (1st session)|**Hosts facilitate the sessions**\n- Asia-Pacific / EMEA friendly meeting: at 12:00 PM UTC\n- [#community-team](https://make.wordpress.org/chat/) channel on Slack\n\n**Parent Issue:** [#$PARENT_ISSUE_NUMBER]($PARENT_ISSUE_URL)"
+            "Host the meeting (2nd session)|**Hosts facilitate the sessions**\n- Americas friendly meeting: at 9:00 PM UTC\n- [#community-team](https://make.wordpress.org/chat/) channel on Slack\n\n**Parent Issue:** [#$PARENT_ISSUE_NUMBER]($PARENT_ISSUE_URL)"
+            "Write the meeting recap|**Recap template**\n[Google Docs](https://docs.google.com/document/d/1fCPPQgE7anhrtgYnUnVWRnHMvLrmPtsIWUJh8I8CgRQ/edit?tab=t.0#heading=h.dqymfbg7mc8a)\n\n**Creating a new post**\n[WordPress Community Post](https://make.wordpress.org/community/wp-admin/post-new.php)\n\n**Parent Issue:** [#$PARENT_ISSUE_NUMBER]($PARENT_ISSUE_URL)"
+          )
+
+          for TASK in "${TASKS[@]}"; do
+            TITLE=$(echo "$TASK" | cut -d '|' -f 1)
+            BODY=$(echo "$TASK" | cut -d '|' -f 2)
+
+            gh issue create \
+              --title "[Meeting Task] $TITLE" \
+              --body "$BODY" \
+              --label "Monthly Meeting" \
+              --repo $GITHUB_REPOSITORY
+          done
