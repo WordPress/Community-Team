@@ -4,6 +4,13 @@ title: "[Community Meeting] YYYY-MM"
 labels: ["meeting", "community-team", "Community Monthly Meeting"]
 assignees: []
 body:
+  - type: textarea
+    attributes:
+      label: "Meeting Details"
+      description: "Provide the date, time, and any additional information about the meeting."
+      placeholder: "Date and Time (UTC), Meeting Link, etc."
   - type: markdown
     attributes:
-      value: "## 📅 Community Team Monthly Meeting Issue\nThis issue tracks the preparation and follow-up tasks for the community team monthly meeting."
+      value: |
+        ## 📅 Community Team Monthly Meeting Issue
+        This issue tracks the preparation and follow-up tasks for the community team monthly meeting.
