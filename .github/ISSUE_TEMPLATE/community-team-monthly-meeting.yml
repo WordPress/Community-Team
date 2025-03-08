@@ -1,14 +1,14 @@
 name: Community Team Monthly Meeting
 description: Create and manage tasks for the community team monthly meeting
 title: "[Community Meeting] YYYY-MM"
-labels: ["meeting", "community-team", "Community Monthly Meeting"]
+labels: ["[Admin] Team Meeting"]
 assignees: []
 body:
   - type: textarea
     attributes:
       label: "Meeting Details"
       description: "Provide the date, time, and any additional information about the meeting."
-      placeholder: "Date and Time (UTC), Meeting Link, etc."
+      placeholder: " "
   - type: markdown
     attributes:
       value: |
