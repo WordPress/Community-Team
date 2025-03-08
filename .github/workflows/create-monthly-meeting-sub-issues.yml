@@ -5,7 +5,7 @@ on:
 
 jobs:
   create-sub-issues:
-    if: contains(github.event.issue.labels.*.name, 'Community Monthly Meeting')
+    if: contains(github.event.issue.labels.*.name, '[Admin] Team Meeting')
     runs-on: ubuntu-latest
     steps:
       - name: Create sub-issues
