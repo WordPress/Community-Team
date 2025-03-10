@@ -14,7 +14,6 @@ jobs:
         run: |
           # 親Issueの情報を取得
           PARENT_ISSUE_NUMBER=${{ github.event.issue.number }}
-          PARENT_ISSUE_TITLE=${{ github.event.issue.title }}
           PARENT_ISSUE_URL=${{ github.event.issue.html_url }}
 
           # 子Issueのリスト
