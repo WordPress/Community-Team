@@ -32,6 +32,6 @@ jobs:
             gh issue create \
               --title "[Meeting Task] $TITLE" \
               --body "$BODY" \
-              --label "Monthly Meeting" \
+              --label "[Admin] Team Meeting" \
               --repo $GITHUB_REPOSITORY
           done
