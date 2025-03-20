@@ -18,11 +18,11 @@ jobs:
 
           # 子Issueのリスト
           TASKS=(
-            "Create and publish the team meeting agenda|**Agenda template**[Google Docs](https://docs.google.com/document/d/1TL4z0Z6L83jBbXhBIWPJ7b2FHYLyijXewXZ_BYMl33Q/edit?tab=t.0)**Creating a new post**[WordPress Community Post](https://make.wordpress.org/community/wp-admin/post-new.php)**Parent Issue:** [#$PARENT_ISSUE_NUMBER]($PARENT_ISSUE_URL)"
-            "Create the meeting script|**Script template**\n[Google Docs](https://docs.google.com/document/d/1zu_lWf150SJ6nVz7IG7_QhLYQbvOUQNBgQ_PU2c2q8A/edit?tab=t.0)\n\n**Parent Issue:** [#$PARENT_ISSUE_NUMBER]($PARENT_ISSUE_URL)"
-            "Host the meeting (1st session)|**Hosts facilitate the sessions**\n- Asia-Pacific / EMEA friendly meeting: at 12:00 PM UTC\n- [#community-team](https://make.wordpress.org/chat/) channel on Slack\n\n**Parent Issue:** [#$PARENT_ISSUE_NUMBER]($PARENT_ISSUE_URL)"
-            "Host the meeting (2nd session)|**Hosts facilitate the sessions**\n- Americas friendly meeting: at 9:00 PM UTC\n- [#community-team](https://make.wordpress.org/chat/) channel on Slack\n\n**Parent Issue:** [#$PARENT_ISSUE_NUMBER]($PARENT_ISSUE_URL)"
-            "Write the meeting recap|**Recap template**\n[Google Docs](https://docs.google.com/document/d/1fCPPQgE7anhrtgYnUnVWRnHMvLrmPtsIWUJh8I8CgRQ/edit?tab=t.0#heading=h.dqymfbg7mc8a)\n\n**Creating a new post**\n[WordPress Community Post](https://make.wordpress.org/community/wp-admin/post-new.php)\n\n**Parent Issue:** [#$PARENT_ISSUE_NUMBER]($PARENT_ISSUE_URL)"
+            "Create and publish the team meeting agenda|**Agenda template** [Google Docs](https://docs.google.com/document/d/1TL4z0Z6L83jBbXhBIWPJ7b2FHYLyijXewXZ_BYMl33Q/edit?tab=t.0) **Creating a new post** [WordPress Community Post](https://make.wordpress.org/community/wp-admin/post-new.php) **Parent Issue:** [#$PARENT_ISSUE_NUMBER]($PARENT_ISSUE_URL)"
+            "Create the meeting script|**Script template** [Google Docs](https://docs.google.com/document/d/1zu_lWf150SJ6nVz7IG7_QhLYQbvOUQNBgQ_PU2c2q8A/edit?tab=t.0) **Parent Issue:** [#$PARENT_ISSUE_NUMBER]($PARENT_ISSUE_URL)"
+            "Host the meeting (1st session)|**Hosts facilitate the sessions** - Asia-Pacific / EMEA friendly meeting: at 12:00 PM UTC - [#community-team](https://make.wordpress.org/chat/) channel on Slack **Parent Issue:** [#$PARENT_ISSUE_NUMBER]($PARENT_ISSUE_URL)"
+            "Host the meeting (2nd session)|**Hosts facilitate the sessions** - Americas friendly meeting: at 9:00 PM UTC - [#community-team](https://make.wordpress.org/chat/) channel on Slack **Parent Issue:** [#$PARENT_ISSUE_NUMBER]($PARENT_ISSUE_URL)"
+            "Write the meeting recap|**Recap template** [Google Docs](https://docs.google.com/document/d/1fCPPQgE7anhrtgYnUnVWRnHMvLrmPtsIWUJh8I8CgRQ/edit?tab=t.0#heading=h.dqymfbg7mc8a) **Creating a new post** [WordPress Community Post](https://make.wordpress.org/community/wp-admin/post-new.php)\n\n**Parent Issue:** [#$PARENT_ISSUE_NUMBER]($PARENT_ISSUE_URL)"
           )
 
           for TASK in "${TASKS[@]}"; do
