@@ -19,6 +19,8 @@ body:
         - Meetup
         - WordCamp
         - WordPress Event
+        - Campus Connect
+        - Student Club
       default: 1
     validations:
       required: true
