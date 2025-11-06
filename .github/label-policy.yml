@@ -9,3 +9,7 @@ policy:
             keys: ["WordCamp"]
           - name: "wordpress-event-application"
             keys: ["WordPress Event"]
+          - name: "campus-connect-application"
+            keys: ["Campus Connect"]
+          - name: "student-club-application"
+            keys: ["Student Club"]
