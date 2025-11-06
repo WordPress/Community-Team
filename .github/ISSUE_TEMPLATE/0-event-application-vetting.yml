@@ -1,6 +1,6 @@
 name: "Event Application Vetting"
 description: Add a Event Vetting Applications to track.
-title: "[WordCamp/Meetup/WordPress Event] <Event Title>: "
+title: "[WordCamp/Meetup/WordPress Event/Campus Connect/Student Club] <Event Title>: "
 labels: ["event", "application", "Awaiting Triage"]
 projects: ["WordPress/176"]
 body:
