@@ -1,15 +1,15 @@
 // ==UserScript==
 // @name         Campus Connect Status Highlighter
-// @namespace    https://github.com/supernovia/Scripts
-// @version      1.4.3
+// @namespace    https://github.com/WordPress/Community-Team
+// @version      1.4.4
 // @description  Status & Coming Soon Highlights + Filters
 // @author       Vibe-Codin' Velda
 // @match        https://central.wordcamp.org/wp-admin/index.php?page=wordcamp-reports&report=campus-connect-details*
 // @match        https://central.wordcamp.org/wp-admin/edit.php?post_type=wordcamp*
-// @updateURL    https://raw.githubusercontent.com/supernovia/Scripts/master/org/statushighlighter.user.js
-// @downloadURL  https://raw.githubusercontent.com/supernovia/Scripts/master/org/statushighlighter.user.js
-// @homepageURL  https://github.com/supernovia/Scripts/tree/master/org // fork away!
-// @supportURL   https://github.com/supernovia/Scripts/issues
+// @updateURL    https://raw.githubusercontent.com/WordPress/Community-Team/trunk/scripts/highlighter/statushighlighter.user.js
+// @downloadURL  https://raw.githubusercontent.com/WordPress/Community-Team/trunk/scripts/highlighter/statushighlighter.user.js
+// @homepageURL  https://github.com/WordPress/Community-Team/tree/trunk/scripts/highlighter
+// @supportURL   https://github.com/WordPress/Community-Team/issues
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=wordcamp.org
 // @run-at       document-idle
 // @grant        none
