@@ -46,6 +46,7 @@ If you love WordPress and want to help us do these things, join in!
 - [Virtual Events](https://make.wordpress.org/community/handbook/virtual-events/)
 - [do_action charity hackathons](https://doaction.org/)
 - [NextGen Events](https://make.wordpress.org/community/handbook/community-deputy/other-event-formats/nextgen-wordpress-event/)
+- [Campus Connect Events](https://events.wordpress.org/campusconnect/)
 
 ## Let’s Talk
 
@@ -58,3 +59,4 @@ Learn more about the work we do from:
 - [Team Handbooks](https://make.wordpress.org/community/handbook/)
 - [Team Projects](https://make.wordpress.org/community/team-projects/)
 - [Diversity initiatives](https://make.wordpress.org/community/handbook/wordcamp-organizer/first-steps/inclusive-and-welcoming-events/community-inclusion-initiatives/)
+
