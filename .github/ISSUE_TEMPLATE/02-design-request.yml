@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for requesting design help! This form is for official WordPress community events and groups only.
+        Thanks for requesting design help! This form is for official WordPress community events and groups only. Please add a clear title, then fill in as many details as you can below.
         
   - type: dropdown
     id: event-type
