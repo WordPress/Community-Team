@@ -1,0 +1,148 @@
+name: "Community Design Request"
+description: "Request design help for your WordPress Meetup, WordCamp, Campus Connect, or Student Club"
+title: "[Design Request] "
+labels: ["design-request", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for requesting design help! This form is for official WordPress community events and groups only.
+        
+  - type: dropdown
+    id: event-type
+    attributes:
+      label: "Event/Group Type"
+      description: "What type of WordPress community group is this for?"
+      options:
+        - "WordPress Meetup"
+        - "WordCamp"
+        - "Campus Connect"
+        - "Student Club"
+        - "Other official WordPress event"
+    validations:
+      required: true
+
+  - type: textarea
+    id: event-details
+    attributes:
+      label: "Event/Group Details"
+      description: "Include name, URL, date if applicable, and city/country for events"
+      placeholder: "ex. WordCamp Tokyo 2042 or WordPress London Community"
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "## Contact Information"
+
+  - type: input
+    id: slack-channel
+    attributes:
+      label: "Slack Channel"
+      description: "Where should a designer reach out about your request?"
+      placeholder: "ex. #wp-tokyo"
+    validations:
+      required: true
+
+  - type: input
+    id: slack-handle
+    attributes:
+      label: "Slack handles"
+      description: "How can a volunteer reach the requesters directly?"
+      placeholder: "@username"
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "## Design Request Details"
+
+  - type: checkboxes
+    id: design-type
+    attributes:
+      label: "What do you need designed?"
+      description: "Check all that apply"
+      options:
+        - label: "Social media graphics"
+        - label: "Event banner"
+        - label: "Sticker/swag design"
+        - label: "Presentation template"
+        - label: "Logo variation"
+        - label: "Other (describe below)"
+
+  - type: textarea
+    id: design-description
+    attributes:
+      label: "Describe Your Design Request"
+      description: "What do you need and how will it be used? Include whether the designer should match existing materials exactly or has creative freedom."
+      placeholder: "We need a shareable social image announcing our upcoming meetup..."
+    validations:
+      required: true
+      
+  - type: input
+    id: deadline
+    attributes:
+      label: "When do you need this completed?"
+      description: "Please allow at least 6 weeks."
+      placeholder: "YYYY-MM-DD"
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "## Resources & Requirements"
+
+  - type: textarea
+    id: messaging
+    attributes:
+      label: "Required Text/Messaging"
+      description: |
+        Any specific text that MUST be included (event name, date, tagline, hashtags, sponsor names, etc.)
+        Be exact about spelling and formatting.
+      placeholder: |
+        Must include:
+        - Event name: WordCamp City 2042
+        - Date: May 15-16, 2042
+        - Tagline: "Building Community Together"
+        - Hashtag: #WCCity2042
+
+  - type: textarea
+    id: specifications
+    attributes:
+      label: "Technical Specifications"
+      description: "File formats, dimensions, and any technical requirements you might have. If you don't have these now, the designer may ask to confirm later."
+      placeholder: |
+        - Social media image: 1200x630px JPG/PNG
+        - Banner: 2560x500px PNG with transparent background
+        - Print stickers: Vector format (SVG/AI), 3" circle with 1/8" bleed
+        - Featured Images: 2000x2000px square, noting top/bottom edges may be trimmed on socials
+        - Flyers, 1/4 page black and white
+      
+  - type: textarea
+    id: existing-assets
+    attributes:
+      label: "Existing Assets & Links"
+      description: |
+        Please provide links to:
+        - Any existing logos, brand guidelines, or previous designs
+        - Your website for visual reference
+        - Google Drive/Dropbox folders with assets
+        - Any inspiration or examples you like
+      placeholder: |
+        Logo files: https://drive.google.com/...
+        Our website: https://city.wordcamp.org
+        Brand guide: https://...
+
+
+  - type: checkboxes
+    id: code-of-conduct
+    attributes:
+      label: "Community Guidelines"
+      description: "By submitting this request, you confirm that"
+      options:
+        - label: "This is for an official WordPress community event/group"
+          required: true
+        - label: "I understand the work will be openly licensed for community use"
+          required: true
+        - label: "I understand fulfillment depends on volunteer availability and timely feedback to designer"
+          required: true
