@@ -1,12 +1,14 @@
 name: "Community Design Request"
 description: "Request design help for your WordPress Meetup, WordCamp, Campus Connect, or Student Club"
 title: "[Design Request] "
-labels: ["needs design", "needs-triage", "good first issue"]
+labels: ["design-request", "needs-triage", "good first issue"]
 body:
   - type: markdown
     attributes:
       value: |
         Thanks for requesting design help! This form is for official WordPress community events and groups only. Please add a clear title, then fill in as many details as you can below.
+        
+        **What happens after you submit:** Your request will be triaged and labeled for designers to find. Interested volunteers will comment on this GitHub issue or reach out via the Slack channel you provide. Please watch both for responses.
         
   - type: dropdown
     id: event-type
@@ -123,11 +125,12 @@ body:
     attributes:
       label: "Existing Assets & Links"
       description: |
-        Please provide links to:
+        Please provide HIGH RESOLUTION files suitable for print, ensuring you have permission/licensing to use any images you provide.
+        Include:
+        - Google Drive/Dropbox folders with assets
         - Any existing logos, brand guidelines, or previous designs
         - Your website for visual reference
-        - Google Drive/Dropbox folders with assets
-        - Any inspiration or examples you like
+  
       placeholder: |
         Logo files: https://drive.google.com/...
         Our website: https://city.wordcamp.org
@@ -137,12 +140,7 @@ body:
   - type: checkboxes
     id: code-of-conduct
     attributes:
-      label: "Community Guidelines"
-      description: "By submitting this request, you confirm that"
+      label: "Please confirm:"
       options:
-        - label: "This is for an official WordPress community event/group"
-          required: true
-        - label: "I understand the work will be openly licensed for community use"
-          required: true
-        - label: "I understand fulfillment depends on volunteer availability and timely feedback to designer"
+        - label: "By submitting this request, I confirm this is for an official WordPress event, I have permission to use all provided logos/images, the work will be openly licensed for community use, and I understand fulfillment depends on volunteer availability"
           required: true
