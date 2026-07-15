@@ -127,14 +127,15 @@ body:
       description: |
         Please provide HIGH RESOLUTION files suitable for print, ensuring you have permission/licensing to use any images you provide.
         Include:
-        - Google Drive/Dropbox folders with assets
-        - Any existing logos, brand guidelines, or previous designs
+        - Any existing logos, brand guidelines, preferred colors, or previous designs
         - Your website for visual reference
+        - Google Drive/Dropbox folders with assets
   
       placeholder: |
         Logo files: https://drive.google.com/...
         Our website: https://city.wordcamp.org
-        Brand guide: https://...
+        Brand guide: https://... (if available)
+        Colors: (e.g. #a8deff, #1c326a)
 
 
   - type: checkboxes
