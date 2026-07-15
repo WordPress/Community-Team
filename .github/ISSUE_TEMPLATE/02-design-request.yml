@@ -1,7 +1,7 @@
 name: "Community Design Request"
 description: "Request design help for your WordPress Meetup, WordCamp, Campus Connect, or Student Club"
 title: "[Design Request] Title goes here"
-labels: ["design-request", "needs-triage", "good first issue"]
+labels: ["Design", "good first issue"]
 body:
   - type: markdown
     attributes:
