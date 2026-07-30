@@ -70,6 +70,7 @@ body:
         - label: "Sticker/swag design"
         - label: "Presentation template"
         - label: "Logo variation"
+        - label: "Site design"
         - label: "Other (describe below)"
 
   - type: textarea
