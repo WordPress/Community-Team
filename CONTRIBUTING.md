@@ -26,7 +26,7 @@ Install the bookmarklet here:
 
 * Access to [GitHub - WordPress/Community-Team](https://github.com/WordPress/Community-Team) repository on Github
 * Access to WordCamp and Meetup Tracker
-* Helpscout - [support@wordcamp.org](mailto:support@wordcamp.org)
+* [FreeScout](https://freescout.wordpress.net/) - [support@wordcamp.org](mailto:support@wordcamp.org)
 
 If you do not have access to any one of these, you will not be able to vet applications. Please ask someone for access [#community-team](https://wordpress.slack.com/archives/C037W5S7X)
 
@@ -75,7 +75,7 @@ Once the issue is created, you can assign it to yourself or to a teammate
 
 #### Application Review Process on GitHub
 
-> Once you’ve received the issue assigned to yourself, you’ll use GitHub just to track the progress, but the whole process will be carried out using the event tracker and HelpScout [as usual](https://make.wordpress.org/community/handbook/community-deputy/resources-and-tools/application-review/). Please never share your vetting notes on GitHub, only in the event tracker as we always do.
+> Once you’ve received the issue assigned to yourself, you’ll use GitHub just to track the progress, but the whole process will be carried out using the event tracker and FreeScout [as usual](https://make.wordpress.org/community/handbook/community-deputy/resources-and-tools/application-review/). Please never share your vetting notes on GitHub, only in the event tracker as we always do.
 
 * Update the status to In Progress
 * If you need a second opinion or help from teammates, while you wait for their feedback please update the status to In Review
